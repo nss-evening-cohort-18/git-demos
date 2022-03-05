@@ -3,7 +3,7 @@ const today = new Date()
 const tomorrow = today.getDate()+1;
 const dayAfterTomorrow = today.getDate()+2
 
-export const data = {
+export const dataStore = {
     hotels: [
         {
             id: 1,

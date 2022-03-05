@@ -1,12 +1,12 @@
-import { data } from "./database.js";
+import { dataStore } from "./database.js";
 
-console.log(`the database is: \n ${JSON.stringify(data)}`)
+console.log(`the database is: \n ${JSON.stringify(dataStore)}`)
 
 // This function takes in a hotel id and will iterate through the rooms
 // and take a total count of rooms have the same hotel_id as the argument,
 // and return the sum
 const getNumberOfRooms = (hotel_id) => {
-    const rooms = data.rooms
+    const rooms = dataStore.rooms
 
     let roomCount = 0
     for (const room of rooms) {
@@ -20,10 +20,10 @@ const getNumberOfRooms = (hotel_id) => {
 const getHotelAddress = (hotel_id) => {
     let hotelAddress = null;
 
-    for (hotel of data.hotels) {
+    for (hotel of dataStore.hotels) {
         if (hotel_id === hotel.id) {
             address = hotel.address
-            for (address of data.addresses) {
+            for (address of dataStore.addresses) {
                 if (hotelAddress === address.id ) {
                     hotelAddress = address
                 }
